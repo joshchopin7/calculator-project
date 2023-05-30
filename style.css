@@ -1,0 +1,98 @@
+
+body {
+    background-image: url(images/background.jpg);
+    background-size: 1000px;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.container {
+    width: 30em;
+    height: 40em;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(31, 30, 30);
+    border-radius: 1em;
+    background-color: rgb(1, 140, 112);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 30px;
+}
+
+.numbers {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content:stretch;
+}
+
+#number {
+    font-size: 50px;
+    margin: 1px;
+    background-color: rgb(203, 255, 209);
+    padding-inline: 24px;
+}
+
+.operands {
+    width: 100px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.operand {
+    font-size: 55px;
+    height: 70px;
+    margin: 1px;
+    background-color: rgb(255, 190, 69);
+}
+
+
+.top {
+    display: flex;
+    margin-bottom: -100px;
+}
+
+.zeroDecimalEquals {
+    height: 100px;
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -75px;
+}
+
+#zero, #decimal, #equals {
+    font-size: 50px;
+    margin: 1px;
+}
+
+#zero {
+    width: 160px;
+    background-color: rgb(203, 255, 209);
+}
+
+#decimal {
+    width: 80px;
+    background-color: rgb(203, 255, 209);
+}
+
+#equals {
+    width: 98px;
+    background-color: rgb(255, 190, 69);
+    margin-left: 5px;
+}
