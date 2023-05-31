@@ -30,14 +30,21 @@ body {
     border-color: black;
     width: 350px;
     height: 100px;
-    margin: 30px;
     margin-bottom: 0px;
     background-color: rgb(107, 153, 122);
     display: flex;
-    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
     font-size: 36px;
-    padding: 5px;
     color: aliceblue;
+}
+
+p {
+    margin: 0px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .buttons {
@@ -56,7 +63,7 @@ body {
     justify-content:stretch;
 }
 
-#number {
+.number {
     font-size: 50px;
     margin: 1px;
     background-color: rgb(203, 255, 209);
