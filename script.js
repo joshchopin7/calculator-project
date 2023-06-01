@@ -16,15 +16,15 @@ const multiply = document.getElementById('multiply');
 const subtract = document.getElementById('subtract');
 const add = document.getElementById('add');
 
-const equals = document.getElementById('equals').textContent;
+const equals = document.getElementById('equals');
 
-// create const variables for two screen elements
+// create const variables for screen elements
 
 const equation = document.getElementById('equation');
 const solution = document.getElementById('solution');
+const clear = document.getElementById('clear');
 
-
-// create function to add textContent to screen element, 'equation'
+// add Event Listeners that add textContent to screen element, 'equation'
 one.addEventListener('click', function() {
     equation.textContent += '1';
 });
@@ -71,21 +71,15 @@ add.addEventListener('click', function() {
     equation.textContent += '+';
 });
 
-// equals sign function and clear/clear all buttons are missing :(((
+// Event Listener that runs on equals button
+equals.addEventListener('click',function() {
+    read(equation.textContent)
+});
 
-
-
-// function that takes current element, 'equation', and assigns string to a variable
-
-function read(string) {
-    let test = string;
-    let arr = test.split('');
-    return arr;
-}
-
-
-
-
+clear.addEventListener('click', function(){
+    equation.textContent = '';
+    solution.textContent = '';
+});
 
 // create functions for eack operation
 
@@ -93,7 +87,7 @@ function addition(a,b) {
     let num1 = parseInt(a);
     let num2 = parseInt(b);
     let ans = num1 + num2;
-    return ans;``
+    return ans;
 }
 
 function subtraction(a,b) {
@@ -115,4 +109,30 @@ function division(a,b) {
     let num2 = parseInt(b);
     let ans = num1 / num2;
     return ans;
+}
+
+
+
+// function that takes current element, 'equation', and assigns string to a variable.
+// Make that variable into an array, then send through its appropriate operation function.
+
+function read(string) {
+    
+    if(string.includes('+')) {
+        let arr = string.split('+');
+        let show = addition(arr[0],arr[1]);
+        solution.textContent += show;
+    } else if (string.includes('-')) {
+        let arr = string.split('-');
+        let show = subtraction(arr[0],arr[1]);
+        solution.textContent += show;
+    } else if (string.includes('*')) {
+        let arr = string.split('*');
+        let show = multiplication(arr[0],arr[1]);
+        solution.textContent += show;
+    } else if (string.includes('/')) {
+        let arr = string.split('/');
+        let show = division(arr[0],arr[1]);
+        solution.textContent += show;
+    }
 }
